@@ -1,9 +1,12 @@
-<h1>Detail Mahasiswa</h1>
-
-<div class="container-fluid">
-    <h2>Nama Mahasiswa : <%= @mahasiswa.nama %></h2>
-    <h4>Jurusan : <%= @mahasiswa.jurusan %></h4>
-
-    <%= link_to  "Kembali", mahasiswas_path, :class => 'btn btn-info' %>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Detail Mahasiswa</h1>
+            <h2>Nama Mahasiswa : <%= @mahasiswa.nama %></h2>
+            <h4>Jurusan : <%= @mahasiswa.jurusan %></h4>
+            <%= link_to  "Kembali", mahasiswas_path, :class => 'btn btn-info' %>
+        </div>
+    </div>
 </div>
+
 

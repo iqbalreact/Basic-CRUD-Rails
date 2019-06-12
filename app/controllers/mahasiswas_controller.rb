@@ -1,5 +1,8 @@
 class MahasiswasController < ApplicationController
 
+  # refactor controller
+  before_action :current_mahasiswa, only: [:show, :edit, :update, :destroy]
+
   # Menampilkan seluruh data mahasiswa
   def index
     @mahasiswas = Mahasiswa.all
@@ -7,7 +10,7 @@ class MahasiswasController < ApplicationController
 
   # Menampilkan data mahasiswa yang dipilih
   def show
-    @mahasiswa = Mahasiswa.find(params[:id])
+    # @mahasiswa = Mahasiswa.find(params[:id])
   end
   
   # menampilkan form untuk menambahkan mahasiswa
@@ -29,7 +32,7 @@ class MahasiswasController < ApplicationController
 
   #menampilkan data mahasiswa yang akan di edit ke form
   def edit
-    @mahasiswa = Mahasiswa.find(params[:id])
+    # @mahasiswa = Mahasiswa.find(params[:id])
   end
   
   #menyimpan data mahasiswa yang telah diedit
@@ -47,7 +50,7 @@ class MahasiswasController < ApplicationController
 
   # menghapus data mahasiswa yang dipilih
   def destroy
-    @mahasiswa = Mahasiswa.find(params[:id])
+    # @mahasiswa = Mahasiswa.find(params[:id])
     @mahasiswa.destroy
     
     redirect_to mahasiswas_path
@@ -56,6 +59,10 @@ class MahasiswasController < ApplicationController
   private
   def mahasiswa_params
     params.require(:mahasiswa).permit(:nama, :jurusan)  
+  end
+  
+  def current_mahasiswa
+    @mahasiswa = Mahasiswa.find(params[:id])  #refactor controller
   end
 
 end

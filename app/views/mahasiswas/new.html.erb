@@ -1,9 +1,15 @@
-<h1>Tambah Mahasiswa</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Tambah Mahasiswa</h1>
 
-<%= form_with model: @mahasiswa do |form| %>
+            <%= form_with model: @mahasiswa do |form| %>
 
-    <%= form.text_field(:nama, {:class => 'form-control col-md-3'}) %>
-    <%= form.text_field(:jurusan,  {:class => 'form-control col-md-3'}) %>
-    <%= form.submit("Add", {:class => 'btn btn-info'}) %>
+                <%= form.text_field(:nama, {:class => 'form-control col-md-3'}) %>
+                <%= form.text_field(:jurusan,  {:class => 'form-control col-md-3'}) %>
+                <%= form.submit("Add", {:class => 'btn btn-info'}) %>
 
-<% end %>
+            <% end %>
+        </div>
+    </div>
+</div>
