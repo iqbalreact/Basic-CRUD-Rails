@@ -1,2 +1,14 @@
 <h1>Mahasiswas#edit</h1>
 <p>Find me in app/views/mahasiswas/edit.html.erb</p>
+
+<h1>Edit  Mahasiswa</h1>
+
+
+
+<%= form_with model: @mahasiswa do |form| %>
+
+    <%= form.text_field(:nama, {:class => 'form-control col-md-3'}) %>
+    <%= form.text_field(:jurusan,  {:class => 'form-control col-md-3'}) %>
+    <%= form.submit("Update", {:class => 'btn btn-info'}) %>
+
+<% end %>

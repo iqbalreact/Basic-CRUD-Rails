@@ -10,7 +10,7 @@ class MahasiswasController < ApplicationController
     @mahasiswa = Mahasiswa.find(params[:id])
   end
   
-  # menampilkan form untuk menambahkan mahasisa
+  # menampilkan form untuk menambahkan mahasiswa
   def new
     @mahasiswa = Mahasiswa.new
   end
@@ -22,12 +22,35 @@ class MahasiswasController < ApplicationController
       redirect_to mahasiswas_path
     else
       render 'new'
-      # kembali kehalaman form tambah mahasiswa/
+      # kembali kehalaman form tambah mahasiswa
     end
   
   end
 
+  #menampilkan data mahasiswa yang akan di edit ke form
   def edit
+    @mahasiswa = Mahasiswa.find(params[:id])
+  end
+  
+  #menyimpan data mahasiswa yang telah diedit
+  def update
+    @mahasiswa = Mahasiswa.find(params[:id])
+
+    if @mahasiswa.update(mahasiswa_params)   
+      redirect_to mahasiswas_path
+    else
+      render 'edit'
+      # kembali kehalaman edit mahasiswa
+    end
+
+  end
+
+  # menghapus data mahasiswa yang dipilih
+  def destroy
+    @mahasiswa = Mahasiswa.find(params[:id])
+    @mahasiswa.destroy
+    
+    redirect_to mahasiswas_path
   end
 
   private

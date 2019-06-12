@@ -1,12 +1,9 @@
-<h1>Mahasiswas#new</h1>
-<p>Find me in app/views/mahasiswas/new.html.erb</p>
-
-<h1>Create Mahasiswa</h1>
+<h1>Tambah Mahasiswa</h1>
 
 <%= form_with model: @mahasiswa do |form| %>
 
-    <%= form.text_field :nama, placeholder: "Nama Mahasiswa" %>
-    <%= form.text_field :jurusan, placeholder: "Jurusan" %>
-    <%= form.submit("Add") %>
+    <%= form.text_field(:nama, {:class => 'form-control col-md-3'}) %>
+    <%= form.text_field(:jurusan,  {:class => 'form-control col-md-3'}) %>
+    <%= form.submit("Add", {:class => 'btn btn-info'}) %>
 
 <% end %>

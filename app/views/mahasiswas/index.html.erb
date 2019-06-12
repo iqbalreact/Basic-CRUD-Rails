@@ -1,5 +1,4 @@
 <h1>Daftar Mahasiswa</h1>
-<p>Find me in app/views/mahasiswas/index.html.erb</p>
 
 <table>
     <thead>
@@ -10,8 +9,16 @@
         <% @mahasiswas.each do |mahasiswa| %>
         <tr>
             <td><%= mahasiswa.nama %></td>
-            <td><%= link_to  "Lihat", mahasiswa_path(mahasiswa) %></td>
+            <td>
+                <%= link_to  "Lihat", mahasiswa_path(mahasiswa), :class => 'btn btn-info' %>
+                <%= link_to 'Edit', edit_mahasiswa_path(mahasiswa), :class => 'btn btn-success' %>
+                <%= link_to 'Destroy', mahasiswa_path(mahasiswa),
+                      method: :delete,
+                      data: { confirm: 'Are you sure?' } , :class => 'btn btn-danger' %>
+            </td>
         </tr>    
         <% end %>
+
+        <%= link_to  "Add", new_mahasiswa_path, :class => 'btn btn-info' %>
     </tbody>
 </table>

@@ -1,9 +1,9 @@
-<h1>Mahasiswas#show</h1>
-<p>Find me in app/views/mahasiswas/show.html.erb</p>
-
+<h1>Detail Mahasiswa</h1>
 
 <div class="container-fluid">
     <h2>Nama Mahasiswa : <%= @mahasiswa.nama %></h2>
     <h4>Jurusan : <%= @mahasiswa.jurusan %></h4>
+
+    <%= link_to  "Kembali", mahasiswas_path, :class => 'btn btn-info' %>
 </div>
 
