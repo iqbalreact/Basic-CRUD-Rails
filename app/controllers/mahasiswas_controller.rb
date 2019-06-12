@@ -1,5 +1,6 @@
 class MahasiswasController < ApplicationController
   def index
+    @mahasiswas = Mahasiswa.all
   end
 
   def show
