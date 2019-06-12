@@ -1,10 +1,17 @@
 <h1>Daftar Mahasiswa</h1>
 <p>Find me in app/views/mahasiswas/index.html.erb</p>
 
-<ul>
-    <% @mahasiswas.each do |mahasiswa| %>
-
-        <li>Nama : <%= mahasiswa.nama %> / Jurusan <%= mahasiswa.jurusan %> </li>
-
-    <% end %>
-</ul>
+<table>
+    <thead>
+        <th>Nama</th>
+        <th>Lihat</th>
+    </thead>
+    <tbody>
+        <% @mahasiswas.each do |mahasiswa| %>
+        <tr>
+            <td><%= mahasiswa.nama %></td>
+            <td><%= link_to  "Lihat", mahasiswa_path(mahasiswa) %></td>
+        </tr>    
+        <% end %>
+    </tbody>
+</table>
